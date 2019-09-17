@@ -31,4 +31,6 @@ server.use(express.json());
 server.use(session(sessionConfig));
 server.use("/api/users", UsersRouter);
 
+console.log("server is running");
+
 module.exports = server;
