@@ -9,13 +9,16 @@ module.exports = {
   findById
 };
 
+// async function add(user) {
+//   const [id] = await db("users").insert(user);
+
+//   return findById(id);
+// }
+
 function add(user) {
   return db("users")
-    .insert(user, "id")
-    .then(ids => {
-      const [id] = ids;
-      return findById(id);
-    });
+    .insert(user)
+    .then(ids => findById(ids[0]));
 }
 
 function login() {}
