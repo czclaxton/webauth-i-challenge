@@ -31,8 +31,4 @@ server.use(express.json());
 server.use(session(sessionConfig));
 server.use("/api/users", UsersRouter);
 
-server.get("/", (req, res) => {
-  res.status(200).json({ message: "server is up" });
-});
-
 module.exports = server;
