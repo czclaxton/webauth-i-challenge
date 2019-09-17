@@ -14,23 +14,22 @@ module.exports = {
     }
   },
   production: {
-    client: 'sqlite3',
+    client: "sqlite3",
     useNullAsDefault: true,
     connection: {
-      filename: './data/users.db3'
+      filename: "./data/users.db3"
     },
     pool: {
       afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done)
+        conn.run("PRAGMA foreign_keys = ON", done);
       }
     },
     migrations: {
-      directory: './data/migrations',
-      tableName:'knex_migrations'
-    }
+      directory: "./data/migrations",
+      tableName: "knex_migrations"
+    },
     seeds: {
-      directory: './data/seeds'
+      directory: "./data/seeds"
     }
   }
-
 };
